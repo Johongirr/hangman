@@ -4,7 +4,7 @@
 HTML5\
 CSS3 (FLEX)\
 JAVASCRIPT
-XmlHTTPRequest
+
 
 
 ### Live Demoe
