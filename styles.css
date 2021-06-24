@@ -1,0 +1,250 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: rgb(1, 1, 17);
+    --secondary-color: rgb(165, 111, 10);
+
+    --white: #fff;
+    --light-black: #111;
+}
+
+/* general styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+
+    min-height: 100vh;
+}
+:is(button,span, mark){
+    display: inline-block;
+}
+button {
+    border: none;
+    cursor: pointer;
+}
+image {
+    max-width: 100%;
+}
+
+/* headings */
+.heading-level-1 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* body */
+.page :is(.page__intro, .page__instructions, .page__game-over){
+    min-height: 100vh;
+    padding-top: 4rem;
+}
+
+/* intro section */
+.intro {
+    background-color: var(--primary-color);
+    display: none;
+}
+.intro .intro__container {
+    max-width: 560px;
+    margin: 0 auto;
+}
+.intro .intro__btns-box {
+    text-align: center;
+}
+.intro .intro__btn:not(:last-child){
+    margin-right: 1.3rem;
+}
+
+    /* btns */
+.btn {
+    display: inline-block;
+    border: 2px solid var(--white);
+    color: var(--secondary-color);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    background-color: var(--primary-color);
+}
+
+/* instructions */
+.instructions {
+    background-color: var(--primary-color);
+    display: none;
+}
+.instructions .instructions__list {
+    max-width: 650px;
+    margin: 0 auto;
+}
+.instructions .instructions__btn-box {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+    /* list */
+.list {
+    color: var(--white);
+}
+.list .list__item {
+    list-style: none;
+    margin-bottom: 1rem;
+     
+}
+.list .list__item::before {
+    content: "\f04b";
+    padding-right: .5rem;
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    color: rgb(223, 165, 58);   
+}
+
+        /* game over */
+.game-over {
+    background: var(--primary-color);
+    display: none;
+}
+.game-over .game-over__result {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+   
+}
+.game-over .game-over__btn-box {
+    text-align: center;
+}
+
+
+/* main */
+.main .main__game {
+    min-height: 100vh;
+    padding-top: 1.5rem;
+}
+    /* game */
+.game {
+    position: relative;
+    background-color: var(--primary-color);
+}
+.game .game__container {
+    max-width: 960px;
+    margin: 13rem  auto 0 auto;
+    
+}
+
+.game .game__title {
+    margin-bottom: 0;
+}
+        /* hangman images */
+
+.hangman .hangman__images-box {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.hangman .hangman__image {
+    position: absolute;
+    height: 12rem;
+    margin-bottom: 1.5rem;
+    margin-top: -2rem;
+    z-index: -111;
+}
+.hangman .hangman__img--active {
+    z-index: 111;
+}
+
+        /* lives */
+.hangman .hangman__lives {
+    margin-top: 2rem;
+    margin-bottom: -100rem;
+}
+.lives {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.lives .lives__text {
+    color: var(--white);
+    margin-right: .5rem;
+}
+.lives .lives__heart {
+    color: red;
+}
+.lives .lives__heart--off {
+    color:rgb(228, 165, 165);
+}
+ 
+
+
+    /* current letter */
+.game .game__current-word-box {
+    text-align: center;
+    margin: 1rem 0;
+}
+.game .game__current-letter {
+    color: var(--white);
+    padding-right: 1rem;
+    font-size: 1.6rem;
+}
+.game .game__instruction {
+    display: block;
+    color: orange;
+    font-style: italic;
+    background-color: transparent;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+        /* game buttons */
+.game-buttons {
+    text-align: center;
+}
+.game-buttons .game-buttons__top {
+    margin-bottom: 1.5rem;
+}
+.game-buttons .game-buttons__btn {
+    padding: .8rem;
+    color: var(--light-black);
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all .2s ease-in-out;
+}
+.game-buttons .game-buttons__btn:hover:not(.game-buttons__btn--inactive), .game-buttons__btn:focus:not(.game-buttons__btn--inactive) {
+    background-color: gray;
+}
+.game-buttons .game-buttons__btn:not(:last-child){
+    margin-right: .5rem;
+}
+.game-buttons .game-buttons__btn--inactive {
+    background-color: rgb(42, 42, 43);
+    cursor: not-allowed;
+}
+
+@media(max-width: 650px){
+    .heading-level-1 {
+        font-size: 2.5rem;
+    }
+    .btn {
+        padding: 1rem 1.5rem;
+    }
+    .game-over .game-over__result {
+        font-size: 1.5rem;
+    }
+    .main .main__game {
+        padding: 1.5rem;
+    }
+    .list .list__item {
+        padding-left: 1.5rem;
+    }
+    .game-buttons .game-buttons__btn{
+        margin-bottom: .5rem;
+    }
+}

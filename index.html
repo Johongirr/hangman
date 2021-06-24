@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hangman Game</title>
+</head>
+<body class="page">
+    <!-- intro -->
+    <section class="intro page__intro">
+        <div class="intro__container">
+            <header class="intro__header">
+                <h1 class="intro__title heading-level-1">
+                    HANGMAN
+                </h1>
+            </header>
+            <section class="intro__btns-box">
+                <button class="btn intro__btn new-game__btn">
+                    New Game
+                </button>
+                <button class="btn intro__btn how-to-play__btn">
+                    How to Play
+                </button>
+            </section>
+        </div>
+    </section>
+    <!-- instructions -->
+    <section class="instructions page__instructions">
+        <header class="instructions__header">
+            <h2 class="instructions__title heading-level-1">
+                HANGMAN
+            </h2>
+        </header>
+        <ul class="list instructions__list">
+            <li class="list__item">
+                Alright here is how you play!
+            </li>
+            <li class="list__item">
+                When you start a new game, the game will automatically choose a random word.
+            </li>
+            <li class="list__item">
+                Your job is to guess that chosen word completely by guessing a letter at a time by clicking on the buttons.
+            </li>
+            <li class="list__item">
+                If you sucessfully guess the word within 7 tries,  you win or else you lose.
+            </li>
+            <li class="list__item">
+                If you lose, you will be hanged without mercy
+            </li>
+        </ul>
+       <div class="instructions__btn-box">
+            <button class="btn instructions__btn">
+                Main Menu
+            </button>
+       </div>
+    </section>
+
+    <!-- game over -->
+    <section class="game-over page__game-over">
+        <header class="game-over__header">
+            <h2 class="game-over__title heading-level-1">
+                GAME OVER
+            </h2>
+        </header>
+        <section class="game-over__result">
+            <p class="game-over__game-result">
+                You LOST!
+            </p>
+            <p class="game-over__correct-word">
+                The word is ANACONDA
+            </p>
+        </section>
+        <div class="game-over__btn-box">
+            <button class="btn game-over__btn">
+                Main Menu
+            </button>
+        </div>
+    </section>
+
+    <!-- game -->
+    <main class="main page__main">
+        <section class="game main__game">
+            <header class="game__header">
+                <h2 class="game__title heading-level-1">
+                    HANGMAN
+                </h2>
+            </header>
+            
+                <section class="hangman game__hangman">
+                    <figure class="hangman__images-box">
+                        <img src="images/0.jpg" alt="hangman image 1" class="hangman__image hangman__img1"></img>
+                        <img src="images/1.jpg" alt="hangman image 2" class="hangman__image hangman__img2 "></img>
+                        <img src="images/2.jpg" alt="hangman image 3" class="hangman__image hangman__img3 "></img>
+                        <img src="images/3.jpg" alt="hangman image 4" class="hangman__image hangman__img4 "></img>
+                        <img src="images/4.jpg" alt="hangman image 5" class="hangman__image hangman__img5 "></img>
+                        <img src="images/5.jpg" alt="hangman image 6" class="hangman__image hangman__img6 "></img>
+                        <img src="images/6.jpg" alt="hangman image 7" class="hangman__image hangman__img7 "></img>
+                    </figure>
+                </section>
+                <div class="game__container">
+                <section class="lives hangman__lives">
+                    <p class="lives__text">
+                        You have 7 lives:
+                    </p>
+                    <figure class="lives__box">
+                        <i class="fas fa-heart lives__heart"></i>
+                        <i class="fas fa-heart lives__heart"></i>
+                        <i class="fas fa-heart lives__heart"></i>
+                        <i class="fas fa-heart lives__heart"></i>
+                        <i class="fas fa-heart lives__heart"></i>
+                        <i class="fas fa-heart lives__heart"></i>
+                        <i class="fas fa-heart lives__heart"></i>
+                    </figure>
+                </section>
+                <div class="game__current-word-box">
+                 
+                </div>
+                <mark class="game__instruction">
+                    Pick an letter below to guess the whole word.
+                </mark>
+                <section class="game-buttons game__game-buttons">
+                    <div class="game-buttons__top">
+                        <button data-key="A" class="game-buttons__btn">
+                            A
+                        </button>
+                        <button data-key="B" class="game-buttons__btn">
+                            B
+                        </button>
+                        <button data-key="C" class="game-buttons__btn">
+                            C
+                        </button>
+                        <button data-key="D" class="game-buttons__btn">
+                            D
+                        </button>
+                        <button data-key="E" class="game-buttons__btn">
+                            E
+                        </button>
+                        <button data-key="F" class="game-buttons__btn">
+                            F
+                        </button>
+                        <button data-key="G" class="game-buttons__btn">
+                            G
+                        </button>
+                        <button data-key="H" class="game-buttons__btn">
+                            H
+                        </button>
+                        <button data-key="I" class="game-buttons__btn">
+                            I
+                        </button>
+                        <button data-key="J" class="game-buttons__btn">
+                            J
+                        </button>
+                        <button data-key="K" class="game-buttons__btn">
+                            K
+                        </button>
+                        <button data-key="L" class="game-buttons__btn">
+                            L
+                        </button>
+                        <button data-key="M" class="game-buttons__btn">
+                            M
+                        </button>
+                    </div>
+                    <div class="game-buttons__bottom">
+                        <button data-key="N" class="game-buttons__btn">
+                            N
+                        </button>
+                        <button data-key="O" class="game-buttons__btn">
+                            O
+                        </button>
+                        <button data-key="P" class="game-buttons__btn">
+                            P
+                        </button>
+                        <button data-key="Q" class="game-buttons__btn">
+                            Q
+                        </button>
+                        <button data-key="R" class="game-buttons__btn">
+                            R
+                        </button>
+                        <button data-key="S" class="game-buttons__btn">
+                            S
+                        </button>
+                        <button data-key="T" class="game-buttons__btn">
+                            T
+                        </button>
+                        <button data-key="U" class="game-buttons__btn">
+                            U
+                        </button>
+                        <button data-key="V" class="game-buttons__btn">
+                            V
+                        </button>
+                        <button data-key="W" class="game-buttons__btn">
+                            W
+                        </button>
+                        <button data-key="X" class="game-buttons__btn">
+                            X
+                        </button>
+                         <button data-key="Y" class="game-buttons__btn">
+                            Y
+                        </button>
+                        <button data-key="Z" class="game-buttons__btn">
+                            Z
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script src="index.js" defer></script>
+</body>
+</html>
